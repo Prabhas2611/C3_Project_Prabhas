@@ -66,6 +66,10 @@ public class Restaurant {
     }
 
     public Double getTotalCost(List<Item> items) {
-    	return null;
+    	Double totalCost = 0.0;
+    	for (Item item : items) {
+			totalCost = totalCost + item.getPrice();
+		}
+		return totalCost;
     }
 }

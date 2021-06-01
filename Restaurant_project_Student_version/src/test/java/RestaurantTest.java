@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -65,5 +66,10 @@ class RestaurantTest {
     	List<Item> items = restaurant.getMenu();
     	items.remove(0);
     	assertNotNull(restaurant.getTotalCost(items));
+    }
+    
+    @Test
+    public void get_total_cost_should_return_null_value() {
+    	assertEquals(0.0, restaurant.getTotalCost(new ArrayList<>()));
     }
 }
