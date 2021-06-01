@@ -60,4 +60,10 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void get_total_cost_should_return_non_null_value() {
+    	List<Item> items = restaurant.getMenu();
+    	items.remove(0);
+    	assertNotNull(restaurant.getTotalCost(items));
+    }
 }
